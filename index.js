@@ -53,7 +53,7 @@ class S3Adapter extends BaseAdapter{
 
             var targetFolder = path.join(options.folder, moment().format('YYYY/MM/DD/'));
             var formattedFilename = path.parse(image.path);
-            var targetFilename = formattedFilename.name + formattedFilename.ext;
+            var targetFilename = targetFilename = image.name;
             var targetKey = path.join(targetFolder, targetFilename);
 
             console.log("s3-file-store putObject", image.path, options.bucket, targetKey);
